@@ -100,8 +100,7 @@ pushing or opening a pull request.
 A useful tool without a Studio kit manifest can be proposed under
 `[[related_tools]]`. Use the same discovery fields, but omit `kit` and `status`.
 It will be labeled **Related tool** and will have no Studio installation command.
-Maintainers review whether it belongs in the catalog. Reference Audit is the
-initial example.
+Maintainers review whether it belongs in the catalog.
 
 ## Improve an existing listing
 

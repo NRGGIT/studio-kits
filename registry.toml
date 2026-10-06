@@ -37,11 +37,3 @@ repository = "omniscale-ai/studio-kit-spectro"
 publisher = "Omniscale AI"
 categories = ["science", "spectroscopy", "data-analysis"]
 status = "community"
-
-[[related_tools]]
-id = "reference-audit"
-name = "Reference Audit"
-description = "Checks scientific references and flags citations that do not resolve to real publications."
-repository = "constructorfabric/reference-audit"
-publisher = "Constructor"
-categories = ["science", "literature", "references"]

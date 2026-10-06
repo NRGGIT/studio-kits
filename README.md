@@ -19,11 +19,8 @@ Each kit lives in its publisher's repository; this repository helps you find it.
 
 1. [**Quantum Information**](https://github.com/omniscale-ai/studio-kit-qi) — Machine-checkable claims, certificates, and verification workflows for quantum information research. [`omniscale-ai/studio-kit-qi`](https://github.com/omniscale-ai/studio-kit-qi)
 2. [**Spectro**](https://github.com/omniscale-ai/studio-kit-spectro) — Evidence-gated workflows for spectral analysis, model fitting, calibration, and scientific findings. [`omniscale-ai/studio-kit-spectro`](https://github.com/omniscale-ai/studio-kit-spectro)
-3. [**Reference Audit**](https://github.com/constructorfabric/reference-audit) — Checks scientific references and flags citations that do not resolve to real publications. [`constructorfabric/reference-audit`](https://github.com/constructorfabric/reference-audit) · **Related tool**
 
 <!-- END CATALOG -->
-
-Reference Audit is a standalone tool. See its repository for setup and usage.
 
 ## Install a kit
 
