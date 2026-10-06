@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Studio Kits discovery registry",
+  "description": "Validate the parsed TOML document. Uniqueness of IDs and repositories is checked by scripts/catalog.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["registry_version", "kits"],
+  "properties": {
+    "registry_version": {"const": "1"},
+    "kits": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "allOf": [
+          {"$ref": "#/$defs/entry"},
+          {"required": ["status"]}
+        ]
+      }
+    },
+    "related_tools": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {"$ref": "#/$defs/entry"},
+          {"not": {"anyOf": [{"required": ["kit"]}, {"required": ["status"]}]}}
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1, "maxLength": 100, "pattern": "^[^\\r\\n\\t]+$"},
+    "slug": {"type": "string", "maxLength": 80, "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$", "not": {"pattern": "\\s"}},
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "description", "repository", "publisher", "categories"],
+      "properties": {
+        "id": {"$ref": "#/$defs/slug"},
+        "name": {"$ref": "#/$defs/text"},
+        "description": {"type": "string", "minLength": 10, "maxLength": 180, "pattern": "^[^\\r\\n\\t]+$"},
+        "repository": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9-]{0,38}/(?!\\.{1,2}$)[A-Za-z0-9_.-]{1,100}$", "not": {"pattern": "\\s"}},
+        "kit": {"$ref": "#/$defs/slug"},
+        "publisher": {"$ref": "#/$defs/text"},
+        "categories": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/slug"},
+          "contains": {"enum": ["software-product-development", "science"]},
+          "minContains": 1,
+          "maxContains": 1
+        },
+        "status": {"enum": ["official", "verified-publisher", "community"]}
+      }
+    }
+  }
+}

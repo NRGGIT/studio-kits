@@ -1,0 +1,47 @@
+# Discovery metadata only. Installable resources belong in each kit's manifest.
+registry_version = "1"
+
+[[kits]]
+id = "sdlc"
+name = "SDLC"
+description = "Software delivery workflows from requirements and architecture to implementation and review."
+repository = "constructorfabric/studio-kit-sdlc"
+publisher = "Constructor"
+categories = ["software-product-development", "software-development", "architecture"]
+status = "official"
+
+[[kits]]
+id = "competitive-analysis"
+name = "Competitive Analysis"
+description = "Evidence-first competitive research for product discovery, positioning, and prioritization."
+repository = "constructorfabric/studio-kits-pm"
+kit = "compete"
+publisher = "Constructor"
+categories = ["software-product-development", "product-management", "competitive-intelligence"]
+status = "official"
+
+[[kits]]
+id = "quantum-information"
+name = "Quantum Information"
+description = "Machine-checkable claims, certificates, and verification workflows for quantum information research."
+repository = "omniscale-ai/studio-kit-qi"
+publisher = "Omniscale AI"
+categories = ["science", "quantum-information", "verification"]
+status = "community"
+
+[[kits]]
+id = "spectro"
+name = "Spectro"
+description = "Evidence-gated workflows for spectral analysis, model fitting, calibration, and scientific findings."
+repository = "omniscale-ai/studio-kit-spectro"
+publisher = "Omniscale AI"
+categories = ["science", "spectroscopy", "data-analysis"]
+status = "community"
+
+[[related_tools]]
+id = "reference-audit"
+name = "Reference Audit"
+description = "Checks scientific references and flags citations that do not resolve to real publications."
+repository = "constructorfabric/reference-audit"
+publisher = "Constructor"
+categories = ["science", "literature", "references"]
